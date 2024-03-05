@@ -198,7 +198,7 @@ $(function() {
   // --------------------------------------------- //
   $('.notify-form').ajaxChimp({
     callback: mailchimpCallback,
-    url: 'https://besaba.us10.list-manage.com/subscribe/post?u=e8d650c0df90e716c22ae4778&amp;id=54a7906900'
+    url: 'https://dev.us22.list-manage.com/subscribe?u=d5dd5240090898a5fca5984b8&id=ed1f09477d'
   });
 
   function mailchimpCallback(resp) {
@@ -229,24 +229,24 @@ $(function() {
   // --------------------------------------------- //
   // Say Hello Form Start
   // --------------------------------------------- //
-  $("#sayhello-form").submit(function() { //Change
-		var th = $(this);
-		$.ajax({
-			type: "POST",
-			url: "mail.php", //Change
-			data: th.serialize()
-		}).done(function() {
-      $('.sayhello').find('.form').addClass('is-hidden');
-      $('.sayhello').find('.reply-group').addClass('is-visible');
-			setTimeout(function() {
-				// Done Functions
-        $('.sayhello').find('.reply-group').removeClass('is-visible');
-        $('.sayhello').find('.form').delay(300).removeClass('is-hidden');
-				th.trigger("reset");
-			}, 5000);
-		});
-		return false;
-	});
+  // $("#sayhello-form").submit(function() { //Change
+	// 	var th = $(this);
+	// 	$.ajax({
+	// 		type: "POST",
+	// 		url: "mail.php", //Change
+	// 		data: th.serialize()
+	// 	}).done(function() {
+  //     $('.sayhello').find('.form').addClass('is-hidden');
+  //     $('.sayhello').find('.reply-group').addClass('is-visible');
+	// 		setTimeout(function() {
+	// 			// Done Functions
+  //       $('.sayhello').find('.reply-group').removeClass('is-visible');
+  //       $('.sayhello').find('.form').delay(300).removeClass('is-hidden');
+	// 			th.trigger("reset");
+	// 		}, 5000);
+	// 	});
+	// 	return false;
+	// });
   // --------------------------------------------- //
   // Say Hello Form End
   // --------------------------------------------- //

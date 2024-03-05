@@ -40,15 +40,16 @@ if ($method === 'POST') {
     // Send the email
     if (mail($admin_email, $form_subject, $message, $headers)) {
         // Email sent successfully
-        echo "Message sent successfully";
+        http_response_code(200);
+        echo json_encode(["status" => "success", "message" => "Message sent successfully"]);
     } else {
         // Failed to send email
         http_response_code(500);
-        echo "Failed to send message";
+        echo json_encode(["status" => "error", "message" => "Failed to send message"]);
     }
 } else {
     // Method not allowed
     http_response_code(405);
-    echo "Method Not Allowed";
+    echo json_encode(["status" => "error", "message" => "Method Not Allowed"]);
 }
 ?>
